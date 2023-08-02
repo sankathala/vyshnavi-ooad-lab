@@ -1,0 +1,82 @@
+include <conio.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+ 
+// Defining Structure
+typedef struct mynode {
+    char name[20];
+    char gen[6];
+    int age;
+    struct mynode* link;
+} Node;
+ 
+Node* start = NULL;
+ 
+void details(int);
+int seat(int);
+int cal(int, int, int);
+void bill(int, int);
+ 
+// Global variables
+char source[20], des[20], train[40];
+char station[40], cla[40];
+int time1, time2, a[55];
+ 
+// Driver Code
+void main()
+{
+    int i, j, a1, a2, b, c, int x = 0, d, e, r;
+    char o;
+    printf("Enter Number Of Passengers: ");
+    fflush(stdin);
+    scanf("%d", &j);
+ 
+    // Calling details() function with
+    // argument number of passenger
+    details(j);
+    printf("Enter The Source Place: ");
+    fflush(stdin);
+    gets(source);
+    printf("Enter The Destination Place: ");
+    gets(des);
+    printf("\t\tThe Following Trains "
+           "Are Available.....\n");
+    printf("\t\t1. Rajdhani Express.."
+           ".......10:00 "
+           "a.m........Sealdah Station\n");
+    printf("\t\t2. Satabdi Express..."
+           ".......05:00 "
+           "p.m........Howrah Station\n");
+    printf("\t\t3. Humsafar Express..."
+           ".......11:00 "
+           "p.m........Kolkata Chitpur"
+           " Station\n");
+    printf("\t\t4. Garib-Rath Express"
+           ".........05:00 "
+           "p.m........Sealdah Station\n");
+    printf("\t\t5. Duronto Express..."
+           ".........07:00 "
+           "a.m.........Santraganchi"
+           "Station\n");
+    scanf("%d", &i);
+    do {
+        switch (i) {
+        case 1: {
+            strcpy(train,
+                   "Rajdhani Express");
+            strcpy(station,
+                   "Sealdah Station");
+            time1 = 10;
+            time2 = 00;
+            a1 = 2099;
+            a2 = 1560;
+ 
+            // Calling cal() function
+            // with the three argument
+            // and return value
+            d = cal(a1, a2, j);
+            printf("Total Bill Amount:"
+                   " %d\n",
+                   d);
+        }; break;
