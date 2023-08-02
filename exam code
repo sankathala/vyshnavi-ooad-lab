@@ -1,0 +1,25 @@
+package model;
+
+import java.util.ArrayList;
+
+public class Exam {
+    
+    //Students list declaration
+   private  ArrayList  students = new ArrayList(); 
+  
+   // Adding an id to the list
+   public void addStudent(String id){
+       students.add(id);
+   }
+   
+   //Returning the list of students IDs
+   public ArrayList getStudents(){
+       return students;
+   }
+   
+   //Setting the list of students IDs
+   public void setStudents(ArrayList  students){
+       this.students=students;
+   }
+   
+}
